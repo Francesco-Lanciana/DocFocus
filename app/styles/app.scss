@@ -1,8 +1,17 @@
 @import "base/variables";
 
-//foundation (Load in settings, then loads in foundation using those variables)
+//FOUNDATION-------------------
+//Load in foundation settings
 @import "base/foundation-settings";
-@import "foundation";
+
+// Load in foundation using varaiables (settings) found in foundation-settings
+@import "~foundation-sites/scss/foundation";
+
+// Each component has a export mixin, in this case we want everything
 @include foundation-everything;
+//------------------------------
+
 
 //Components
+@import "components/site";
+@import "components/nav";

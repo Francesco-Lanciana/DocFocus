@@ -1,0 +1,77 @@
+/*
+  TODO: Fix li padding (Or at least figure out why it works)
+  TODO: Add variables
+*/
+
+
+.title-bar {
+  padding-top: 0.4rem;
+  background-color: $nav-background;
+}
+
+.top-bar {
+  ul {
+    background-color: $nav-background;
+  }
+
+  .menu > .link {
+    padding-top: 0.4rem;
+  }
+
+  .menu-text {
+    color: $nav-text-color;
+  }
+
+  .menu > li > a {
+    display: inline;
+    padding: 0;
+
+  }
+
+  .active-link {
+    font-weight: bold;
+  }
+}
+
+.top-bar-center {
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.top-bar-center > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid grey;
+  -webkit-border-radius: 15%;
+  -moz-border-radius: 15%;
+  border-radius: 15%;
+
+  li {
+    display: inline;
+    padding: 4px 4px;
+
+    button {
+      color: white;
+    }
+  }
+
+  li + li {
+    border-left: 1px solid grey;
+  }
+}
+
+  //background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+  // larger screen styles
+
+@media only screen and (min-width: 40em) {
+
+  .top-bar {
+    text-align: center;
+  }
+
+  ul.center-buttons {
+    display: inline-block;
+  }
+}

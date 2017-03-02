@@ -1,14 +1,31 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {Router, browserHistory} from 'react-router';
+
+import routes from 'routes';
+import {configureStore} from 'configureStore';
+
+let store = configureStore();
 
 // Load foundation
-$(document).foundation();
+$(document).ready(() => {
+    $(document).foundation();
+});
 
-// App css
+// Import styles
 require('style!css!sass!applicationStyles');
 
-ReactDOM.render(
-  <p>Boilerplate 3 Project</p>,
-  document.getElementById('app')
-);
+require('./styles/js/_nav');
+
+function renderApp() {
+    // We now render `<AppContainer>` instead of our App component.
+    ReactDOM.render(
+        <Provider store={store}>
+            <Router history={browserHistory} routes={routes}/>
+        </Provider>,
+        document.getElementById('app')
+    );
+}
+
+renderApp(); // Renders App on init
